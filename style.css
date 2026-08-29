@@ -217,6 +217,8 @@ h1 span {
   overflow: hidden;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 .tag-list span {
@@ -225,13 +227,11 @@ h1 span {
   font-size: 0.82rem;
   letter-spacing: 0.04em;
   color: var(--text);
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .stats-grid div {
   padding: 14px 10px 12px;
   border-radius: 16px;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .info-panel {
@@ -246,38 +246,14 @@ h1 span {
   box-shadow: 0 28px 52px var(--shadow), 0 0 18px rgba(255, 223, 61, 0.08), 0 0 32px rgba(126, 252, 82, 0.08);
 }
 
-.tag-list span::before,
-.stats-grid div::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(254, 240, 138, 0.2), rgba(163, 255, 61, 0.9), rgba(254, 240, 138, 0.5), rgba(163, 255, 61, 0.75));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(254, 240, 138, 0.18), 0 0 16px rgba(163, 255, 61, 0.14);
-}
-
-.tag-list span:hover::before,
-.stats-grid div:hover::before,
-.tag-list span:focus-visible::before,
-.stats-grid div:focus-within::before,
-.icon-link:hover::before,
-.icon-link:focus-visible::before {
-  opacity: 1;
-}
-
 .tag-list span:hover,
 .tag-list span:focus-visible,
 .stats-grid div:hover,
 .stats-grid div:focus-within {
   transform: translateY(-2px);
-  border-color: rgba(163, 255, 61, 0.45);
-  box-shadow: 0 0 18px rgba(163, 255, 61, 0.14), 0 0 26px rgba(254, 240, 138, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(163, 255, 61, 0.8);
+  box-shadow: 0 0 0 1px rgba(163, 255, 61, 0.12), 0 0 18px rgba(163, 255, 61, 0.14), 0 0 26px rgba(163, 255, 61, 0.08);
 }
 
 .tag-list span > *,
@@ -350,20 +326,6 @@ h1 span {
   border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.stats-grid div::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(254, 240, 138, 0.2), rgba(163, 255, 61, 0.9), rgba(254, 240, 138, 0.5), rgba(163, 255, 61, 0.75));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stats-grid strong,
